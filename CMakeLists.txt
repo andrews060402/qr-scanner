@@ -12,8 +12,9 @@ set( INCLUDE_DIR include )
 if( APPLE )
 	set( EXT_INCLUDE /opt/homebrew/include )
 	set( EXT_LIBS /opt/homebrew/lib )
-elseif( WIN32 )
-	set( EXT_INLCUDE ${OpenCV_INCLUDE_DIRS} ${ZBar_INCLUDE_DIRS} )
+else()
+	set (EXT_INCLUDE /usr/local/include )
+	set (EXIT_LIBS /usr/local/lib )
 endif()
 
 # Find OpenCV
@@ -25,12 +26,10 @@ include_directories(
 	${INCLUDE_DIR}
 )
 
-# If MacOS, set external libs using brew location
-if( APPLE )
-	link_directories(
-		${EXT_LIBS}
-	)
-endif()
+# Set external libs
+link_directories(
+	${EXT_LIBS}
+)
 
 # Set output binary directory
 set( CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin )
@@ -39,4 +38,4 @@ set( CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin )
 add_executable( QRScanner src/main.cpp src/QRScanner.cpp )
 
 # Link external libraries
-target_link_libraries( QRScanner zbar ${ZBar_LIBRARIES} ${OpenCV_LIBS} )
+target_link_libraries( QRScanner zbar ${OpenCV_LIBS} )
