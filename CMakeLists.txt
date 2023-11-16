@@ -13,8 +13,8 @@ if( APPLE )
 	set( EXT_INCLUDE /opt/homebrew/include )
 	set( EXT_LIBS /opt/homebrew/lib )
 else()
-	set (EXT_INCLUDE /usr/local/include )
-	set (EXIT_LIBS /usr/local/lib )
+	set (EXT_INCLUDE /usr/include )
+	set (EXIT_LIBS /usr/lib )
 endif()
 
 # Find OpenCV
