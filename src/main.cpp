@@ -8,6 +8,7 @@ using namespace std;
 void showUsage(char* progName) {
     cout << "Usage: " << progName << " -i <image_path>" << endl;
     cout << "       " << progName << " -v" << endl;
+    cout << "       " << progName << " -h" << endl;
 }
 
 int main(int argc, char* argv[]) {
