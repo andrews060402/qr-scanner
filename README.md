@@ -54,3 +54,6 @@ There are three possible arguments that the program recognizes:
  ```
  ./QRScanner <input_arg> <optional_image_path>
  ```
+
+ ### Docker Instructions
+ Coming soon hopefully!
