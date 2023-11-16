@@ -14,7 +14,7 @@ This project determines the libraries needed for the capability to scan QR codes
 
 ### External Libraries
 - OpenCV
-- Zbar
+- ZBar
 
 Please install the listed libraries before building the project
 
