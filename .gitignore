@@ -1,0 +1,9 @@
+# Ignore the build
+build
+
+# Ignore any executables
+bin/*
+
+# Ignore vscode and mac stuff
+.vscode
+.DS_Store
