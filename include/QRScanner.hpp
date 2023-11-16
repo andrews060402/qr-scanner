@@ -2,6 +2,8 @@
 #define QR_SCANNER_HPP
 
 #include <zbar.h>
+#include <unordered_set>
+#include <string>
 
 class QRScanner {
 
@@ -11,13 +13,14 @@ public:
 
     int imgScan(char* imgPath);
 
-    void videoScan();
+    int videoScan();
 
     ~QRScanner();
 
 private:
 
     zbar::ImageScanner scanner;
+    std::unordered_set<std::string> qrCodes;
 
 };
 

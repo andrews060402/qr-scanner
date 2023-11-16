@@ -1,16 +1,31 @@
 #include "QRScanner.hpp"
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
+void showUsage(char* progName) {
+    cout << "Usage: " << progName << " -i <image_path>" << endl;
+    cout << "       " << progName << " -v" << endl;
+}
+
 int main(int argc, char* argv[]) {
-    if (argc != 2) {
-        cout << "Usage: " << argv[0] << " <image_path>" << endl;
-        return -1;
-    }
 
     QRScanner qrScanner = QRScanner();
 
-   return  qrScanner.imgScan(argv[1]);
+    if (argc == 2 && string(argv[1]) == "-h") {
+        showUsage(argv[0]);
+        return 0;
+    }
+    else if (argc == 2 && string(argv[1]) == "-v") {
+        return qrScanner.videoScan();
+    }
+    else if (argc == 3 && string(argv[1]) == "-i") {
+        return qrScanner.imgScan(argv[2]);
+    }
+
+    showUsage(argv[0]);
+    return -1;
+
 }
